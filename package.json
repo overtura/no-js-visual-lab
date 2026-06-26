@@ -12,10 +12,7 @@
     "typecheck": "node scripts/no-js-lint.mjs",
     "test": "node scripts/no-js-lint.mjs",
     "no-js:dist": "node scripts/no-js-lint.mjs --dist",
-    "check": "pnpm lint && pnpm build && pnpm no-js:dist",
-    "self-improve:context": "node scripts/self-improve-context.mjs",
-    "self-improve:guard": "node scripts/self-improve-guard.mjs",
-    "self-improve:apply": "node scripts/apply-ai-patch.mjs"
+    "check": "pnpm lint && pnpm build && pnpm no-js:dist"
   },
   "devDependencies": {
     "prettier": "^3.0.0",
