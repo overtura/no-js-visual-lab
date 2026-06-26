@@ -17,6 +17,7 @@
       <nav aria-label="주요 섹션">
         <a href="#popover">Popover</a>
         <a href="#accordion">Accordion</a>
+        <a href="#tokens">Tokens</a>
         <a href="#selectors">CSS State</a>
       </nav>
     </header>
@@ -75,6 +76,39 @@
             <summary>자동화</summary>
             <p>중앙 maintainer bot이 문서와 예제 개선을 작은 PR로 제안합니다.</p>
           </details>
+        </div>
+      </section>
+
+      <section id="tokens" class="lab-section split token-lab">
+        <div class="section-copy">
+          <h2>상태 토큰 미리보기</h2>
+          <p>radio 상태와 <code>:has()</code>만으로 미리보기 카드의 강조 토큰과 안내 문구를 바꿉니다.</p>
+        </div>
+        <div class="token-switcher lab-panel">
+          <fieldset class="tone-controls">
+            <legend>강조 톤 선택</legend>
+            <div class="tone-options">
+              <input id="tone-primary" type="radio" name="tone" checked />
+              <label for="tone-primary">Primary</label>
+              <input id="tone-teal" type="radio" name="tone" />
+              <label for="tone-teal">Teal</label>
+              <input id="tone-rose" type="radio" name="tone" />
+              <label for="tone-rose">Rose</label>
+            </div>
+          </fieldset>
+          <article class="token-preview">
+            <span class="preview-chip">CSS variable preview</span>
+            <h3>런타임 코드 없이 상태가 반영됩니다.</h3>
+            <p class="tone-note tone-note-primary">
+              Primary는 주요 액션과 현재 선택 상태를 빠르게 드러내는 기본 강조색입니다.
+            </p>
+            <p class="tone-note tone-note-teal">
+              Teal은 브라우저 네이티브 기능처럼 안전하고 안정적인 실험을 표시합니다.
+            </p>
+            <p class="tone-note tone-note-rose">
+              Rose는 상태 변화나 주의가 필요한 데모를 짧게 표시할 때만 사용합니다.
+            </p>
+          </article>
         </div>
       </section>
 
