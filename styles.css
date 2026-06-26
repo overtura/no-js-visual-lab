@@ -166,8 +166,7 @@
     background: var(--color-surface);
   }
 
-  .popover-menu,
-  .hint-card {
+  .popover-panel {
     max-width: 320px;
     border: 1px solid #d9e4f2;
     padding: 18px;
