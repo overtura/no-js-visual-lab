@@ -38,7 +38,7 @@
         </aside>
       </section>
 
-      <div id="lab-menu" class="popover-menu popover-panel" popover>
+      <div id="lab-menu" class="popover-menu popover-panel lab-panel" popover>
         <strong>실험 메뉴</strong>
         <a href="#popover">선언형 popover</a>
         <a href="#accordion">details accordion</a>
@@ -51,7 +51,7 @@
           <p>버튼과 popover 속성만으로 메뉴, 도움말, 안내 패널을 만들 수 있습니다.</p>
         </div>
         <button class="tool-button" popovertarget="hint-card">도움말 보기</button>
-        <article id="hint-card" class="hint-card popover-panel" popover>
+        <article id="hint-card" class="popover-panel lab-panel" popover>
           <h3>JavaScript 없음</h3>
           <p>이 패널은 HTML 속성만으로 열리고 닫힙니다. 스타일과 위치는 CSS가 담당합니다.</p>
         </article>
@@ -63,15 +63,15 @@
           <p><code>&lt;details name&gt;</code>으로 같은 그룹 안에서 하나의 항목만 열리게 합니다.</p>
         </div>
         <div class="accordion">
-          <details name="native-ui" open>
+          <details class="lab-panel" name="native-ui" open>
             <summary>구조</summary>
             <p>HTML이 상태와 접근성 기본 동작을 맡고 CSS는 표현에 집중합니다.</p>
           </details>
-          <details name="native-ui">
+          <details class="lab-panel" name="native-ui">
             <summary>시각</summary>
             <p>container query와 :has()를 더하면 컴포넌트가 스스로 배치와 강조를 바꿉니다.</p>
           </details>
-          <details name="native-ui">
+          <details class="lab-panel" name="native-ui">
             <summary>자동화</summary>
             <p>중앙 maintainer bot이 문서와 예제 개선을 작은 PR로 제안합니다.</p>
           </details>
@@ -80,7 +80,7 @@
 
       <section id="selectors" class="lab-section state-lab">
         <h2>CSS 상태 실험</h2>
-        <div class="toggle-card">
+        <div class="toggle-card lab-panel">
           <input id="intense" type="checkbox" />
           <label for="intense">고대비 모드</label>
           <p>체크 상태는 JavaScript 없이 <code>:has()</code> 선택자로 카드 전체 스타일을 바꿉니다.</p>
