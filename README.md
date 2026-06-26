@@ -25,6 +25,11 @@ pnpm check
 
 `pnpm check`는 source와 build output 모두에서 `<script>`와 inline event handler가 없는지 검사한다.
 
+## 운영 기준 요약
+- 제약: 런타임 JavaScript를 추가하지 않는다.
+- 기본 검증: `pnpm check`로 source와 build output의 no-JS 상태를 확인한다.
+- R3 처리: workflow, credential, auth/security, infra, migration 변경은 R3로 분류하고 proposal only로 다룬다.
+
 ## 자가 개선
 이 저장소에는 자가 개선 엔진을 두지 않는다. 중앙 control plane인 `okorion/self-improving-maintainer-bot`이 `profiles/overtura/no-js-visual-lab.json` profile로 이 저장소를 target repo로 다룬다.
 
