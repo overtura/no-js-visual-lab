@@ -1,3 +1,5 @@
+@import './design-system/base.css';
+
 @layer reset, base, layout, components;
 
 @layer reset {
@@ -16,11 +18,9 @@
 
 @layer base {
   :root {
-    color: #101625;
-    background: #f7f9fc;
-    font-family:
-      Inter, Pretendard, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    font-family: var(--font-ui);
   }
 
   body {
@@ -47,10 +47,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    padding: 18px clamp(20px, 5vw, 56px);
-    background: color-mix(in srgb, #f7f9fc 86%, transparent);
+    padding: 18px var(--space-page);
+    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid #dfe7f4;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .brand {
@@ -61,14 +61,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    color: #526070;
+    color: var(--color-muted);
     font-size: 14px;
   }
 
   main {
     display: grid;
     gap: 32px;
-    padding: clamp(20px, 5vw, 56px);
+    padding: var(--space-page);
   }
 
   .hero {
@@ -90,7 +90,7 @@
   .hero p,
   .section-copy p,
   .toggle-card p {
-    color: #5e6b7b;
+    color: var(--color-muted);
     font-size: 18px;
     line-height: 1.75;
   }
@@ -101,7 +101,7 @@
     display: grid;
     gap: 24px;
     align-items: center;
-    border-top: 1px solid #dfe7f4;
+    border-top: 1px solid var(--color-border);
     padding: 44px 0;
   }
 
@@ -121,10 +121,10 @@
   .tool-button {
     min-height: 46px;
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     padding: 0 18px;
-    color: white;
-    background: #1746ff;
+    color: var(--color-primary-ink);
+    background: var(--color-primary);
     cursor: pointer;
     box-shadow: 0 16px 38px rgba(23, 70, 255, 0.25);
   }
@@ -136,7 +136,7 @@
     border-radius: 8px;
     background:
       radial-gradient(circle, #ffffff 0 8%, transparent 9%),
-      conic-gradient(from 180deg, #1746ff, #00c2a8, #f5c542, #ff4d8d, #1746ff);
+      conic-gradient(from 180deg, var(--color-primary), var(--color-teal), #f5c542, var(--color-rose), var(--color-primary));
     mask: radial-gradient(circle, transparent 0 32%, #000 33% 100%);
   }
 
@@ -162,11 +162,11 @@
   .hint-card {
     max-width: 320px;
     border: 1px solid #d9e4f2;
-    border-radius: 8px;
+    border-radius: var(--radius-frame);
     padding: 18px;
     color: #101625;
     background: white;
-    box-shadow: 0 24px 70px rgba(16, 22, 37, 0.18);
+    box-shadow: var(--shadow-popover);
   }
 
   .popover-menu {
@@ -176,7 +176,7 @@
   .popover-menu a {
     display: block;
     margin-top: 10px;
-    color: #1746ff;
+    color: var(--color-primary);
   }
 
   .accordion {
@@ -185,8 +185,8 @@
   }
 
   details {
-    border: 1px solid #dfe7f4;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-frame);
     padding: 16px 18px;
     background: white;
   }
@@ -198,8 +198,8 @@
 
   .toggle-card {
     max-width: 620px;
-    border: 1px solid #dfe7f4;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-frame);
     padding: 24px;
     background: white;
   }
@@ -223,9 +223,9 @@
   }
 
   .toggle-card:has(input:checked) {
-    color: #f7f9fc;
-    background: #101625;
-    border-color: #101625;
+    color: var(--color-bg);
+    background: var(--color-text);
+    border-color: var(--color-text);
   }
 
   .toggle-card:has(input:checked) p {

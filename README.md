@@ -31,6 +31,11 @@ pnpm self-improve:context
 pnpm self-improve:guard
 ```
 
+## 디자인 시스템
+- 기준 문서: `DESIGN.md`
+- 실행 토큰: `design-system/base.css`
+- 참고 기록: `docs/design/`
+
 ## 범위 밖
 - 런타임 JavaScript
 - 프레임워크 기반 컴포넌트

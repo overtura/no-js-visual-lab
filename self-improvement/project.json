@@ -6,6 +6,8 @@
   "allowedChangeScope": [
     "index.html",
     "styles.css",
+    "design-system/**",
+    "DESIGN.md",
     "README.md",
     "docs/**",
     ".github/workflows/**",
