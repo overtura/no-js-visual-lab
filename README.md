@@ -29,6 +29,7 @@ pnpm check
 이 저장소에는 자가 개선 엔진을 두지 않는다. 중앙 control plane인 `okorion/self-improving-maintainer-bot`이 `profiles/overtura/no-js-visual-lab.json` profile로 이 저장소를 target repo로 다룬다.
 
 Target 설정은 `maintainer-bot/`에 둔다. 런타임 JavaScript, `.github/workflows/**`, credential, auth/security, infra, migration 변경은 R3로 취급하며 draft/proposal only로 처리한다.
+문서 평가용 QA seed는 `maintainer-bot/evals/docs_qa.jsonl`에 두며, 질문과 필수 포함 문구는 한국어 UTF-8 텍스트로 유지한다.
 
 ## 디자인 시스템
 - 기준 문서: `DESIGN.md`
