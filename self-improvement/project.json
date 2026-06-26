@@ -1,0 +1,26 @@
+{
+  "name": "No-JS Visual Lab",
+  "kind": "html-css-only-visual-lab",
+  "runtime": "Static HTML + CSS + Vite build only",
+  "goal": "최신 HTML/CSS 기능만으로 한국어 인터랙티브 UI 데모를 축적하고 자동 PR로 개선한다.",
+  "allowedChangeScope": [
+    "index.html",
+    "styles.css",
+    "README.md",
+    "docs/**",
+    ".github/workflows/**",
+    ".github/prompts/**",
+    "self-improvement/**",
+    "scripts/**",
+    "package.json"
+  ],
+  "blockedChangeScope": [
+    "src/**",
+    ".env*",
+    "*.pem",
+    "*.key",
+    ".npmrc",
+    "런타임 JavaScript",
+    "실제 API key 또는 credential"
+  ]
+}

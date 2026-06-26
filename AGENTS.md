@@ -1,25 +1,24 @@
 # AGENTS.md
 
 ## Project goal
-이 저장소는 overtura org의 짧은 MVP 실험 저장소다.
-핵심은 코드의 완벽함보다 사용자 flow가 자연스럽게 동작하는지 검증 가능한 결과를 내는 것이다.
+이 저장소는 최신 HTML/CSS만으로 인터랙티브 UI를 만드는 overtura 실험 저장소다. 앱 런타임에는 JavaScript를 넣지 않는다.
 
 ## Commands
-- install: pnpm install
-- dev: pnpm dev
-- lint: pnpm lint
-- typecheck: pnpm typecheck
-- test: pnpm test
-- build: pnpm build
-- full check: pnpm check
+- install: `pnpm install`
+- dev: `pnpm dev`
+- lint: `pnpm lint`
+- build: `pnpm build`
+- full check: `pnpm check`
+- self-improve context: `pnpm self-improve:context`
+- self-improve guard: `pnpm self-improve:guard`
 
 ## Done definition
-- 핵심 사용자 flow가 실제로 실행된다.
-- 기본 실패/빈 상태 중 최소 1개가 처리된다.
-- README에 실행 방법이 있다.
+- 화면 문구는 기본적으로 한국어다.
+- `index.html`과 build output에 런타임 `<script>`가 없다.
+- 핵심 HTML/CSS-only interaction이 실제로 동작한다.
 - PR 요약에 검증 결과가 있다.
 
 ## Review guidelines
-- 리뷰는 한국어로 작성한다.
-- 사소한 취향 논쟁보다 기능 회귀, 예외 처리 누락, 테스트 누락을 우선한다.
-- 깨진 사용자 flow, 빌드 오류, 타입 오류, 무한 로딩, dead click을 우선 지적한다.
+- JavaScript 추가 요청은 먼저 의도를 확인한다.
+- no-JS 제약, 접근성, 깨진 layout, 과한 workflow 권한 상승을 우선 지적한다.
+- self-improve 변경은 민감 정보 guard와 `pnpm check` 통과 여부를 먼저 본다.

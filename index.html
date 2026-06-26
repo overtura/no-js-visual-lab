@@ -3,10 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROJECT_NAME</title>
+    <meta
+      name="description"
+      content="JavaScript 없이 최신 HTML과 CSS 기능만으로 만드는 인터랙티브 UI 실험실"
+    />
+    <title>No-JS Visual Lab</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <a class="brand" href="#top">No-JS Visual Lab</a>
+      <nav aria-label="주요 섹션">
+        <a href="#popover">Popover</a>
+        <a href="#accordion">Accordion</a>
+        <a href="#selectors">CSS State</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <h1>브라우저 기본 기능만으로 화려한 인터랙션을 만듭니다.</h1>
+          <p>
+            popover, details, :has(), container query, cascade layer를 조합해 런타임 JavaScript 없는
+            UI 실험을 축적하는 저장소입니다.
+          </p>
+          <button class="primary" popovertarget="lab-menu">실험 메뉴 열기</button>
+        </div>
+        <aside class="demo-orbit" aria-label="CSS 장식 미리보기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </aside>
+      </section>
+
+      <div id="lab-menu" class="popover-menu" popover>
+        <strong>실험 메뉴</strong>
+        <a href="#popover">선언형 popover</a>
+        <a href="#accordion">details accordion</a>
+        <a href="#selectors">:has 상태 카드</a>
+      </div>
+
+      <section id="popover" class="lab-section">
+        <div class="section-copy">
+          <h2>선언형 Popover</h2>
+          <p>버튼과 popover 속성만으로 메뉴, 도움말, 안내 패널을 만들 수 있습니다.</p>
+        </div>
+        <button class="tool-button" popovertarget="hint-card">도움말 보기</button>
+        <article id="hint-card" class="hint-card" popover>
+          <h3>JavaScript 없음</h3>
+          <p>이 패널은 HTML 속성만으로 열리고 닫힙니다. 스타일과 위치는 CSS가 담당합니다.</p>
+        </article>
+      </section>
+
+      <section id="accordion" class="lab-section split">
+        <div class="section-copy">
+          <h2>Exclusive Accordion</h2>
+          <p><code>&lt;details name&gt;</code>으로 같은 그룹 안에서 하나의 항목만 열리게 합니다.</p>
+        </div>
+        <div class="accordion">
+          <details name="native-ui" open>
+            <summary>구조</summary>
+            <p>HTML이 상태와 접근성 기본 동작을 맡고 CSS는 표현에 집중합니다.</p>
+          </details>
+          <details name="native-ui">
+            <summary>시각</summary>
+            <p>container query와 :has()를 더하면 컴포넌트가 스스로 배치와 강조를 바꿉니다.</p>
+          </details>
+          <details name="native-ui">
+            <summary>자동화</summary>
+            <p>self-improve workflow가 문서, 예제, workflow 개선을 작은 PR로 제안합니다.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="selectors" class="lab-section state-lab">
+        <h2>CSS 상태 실험</h2>
+        <div class="toggle-card">
+          <input id="intense" type="checkbox" />
+          <label for="intense">고대비 모드</label>
+          <p>체크 상태는 JavaScript 없이 <code>:has()</code> 선택자로 카드 전체 스타일을 바꿉니다.</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
