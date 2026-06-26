@@ -30,6 +30,8 @@ pnpm check
 
 Target 설정은 `maintainer-bot/`에 둔다. 런타임 JavaScript, `.github/workflows/**`, credential, auth/security, infra, migration 변경은 R3로 취급하며 draft/proposal only로 처리한다.
 
+문서 QA 기준은 `maintainer-bot/evals/docs_qa.jsonl`에 둔다. 실패한 eval case가 없을 때는 no-op 또는 낮은 위험의 문서 정리를 우선한다.
+
 ## 디자인 시스템
 - 기준 문서: `DESIGN.md`
 - 실행 토큰: `design-system/base.css`

@@ -4,6 +4,7 @@
 
 ## 운영 검증
 - 모든 변경은 `pnpm check`를 통과해야 한다.
+- 문서 QA 기준은 `maintainer-bot/evals/docs_qa.jsonl`에 두고, 실패 case가 없으면 no-op 또는 낮은 위험 문서 정리를 우선한다.
 - 자동 merge 기본값은 꺼져 있다.
 - `.github/workflows/**`, credential, auth/security, infra, migration 변경은 R3로 취급하고 draft/proposal only로 다룬다.
 
