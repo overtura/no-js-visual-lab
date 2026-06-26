@@ -25,6 +25,20 @@ pnpm check
 
 `pnpm check`는 source와 build output 모두에서 `<script>`와 inline event handler가 없는지 검사한다.
 
+## Vercel 배포
+- 배포 설정: `vercel.json`
+- framework: Vite
+- build command: `pnpm build`
+- output directory: `dist`
+- production deploy: Vercel CLI 로그인 또는 `VERCEL_TOKEN` 설정 후 `npx vercel --prod --yes`
+
+현재 저장소는 Vercel 정적 배포 설정까지 준비되어 있다. 이 Codex 실행 환경에서는 Vercel CLI/커넥터 인증이 확인되지 않아 production URL 발급은 인증 후 진행한다.
+
+## 최근 업데이트
+- 밝은 톤 no-JS visual lab 디자인 시스템을 정리했다.
+- native HTML/CSS-only 상호작용 예시를 확장하고 build output no-JS 검증을 유지했다.
+- 중앙 maintainer bot은 런타임 JavaScript 금지 원칙과 최근 PR 이력을 기준으로 독립적인 개선 후보를 찾는다.
+
 ## 운영 기준 요약
 - 제약: 런타임 JavaScript를 추가하지 않는다.
 - 기본 검증: `pnpm check`로 source와 build output의 no-JS 상태를 확인한다.
