@@ -145,7 +145,7 @@
     width: 54%;
     aspect-ratio: 1;
     border: 1px solid color-mix(in srgb, #ffffff 72%, transparent);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
   }
 
   .demo-orbit span:nth-child(2) {
@@ -159,13 +159,19 @@
   }
 
   .popover-menu,
+  .hint-card,
+  details,
+  .toggle-card {
+    border-radius: var(--radius-frame);
+    background: var(--color-surface);
+  }
+
+  .popover-menu,
   .hint-card {
     max-width: 320px;
     border: 1px solid #d9e4f2;
-    border-radius: var(--radius-frame);
     padding: 18px;
     color: #101625;
-    background: white;
     box-shadow: var(--shadow-popover);
   }
 
@@ -186,9 +192,7 @@
 
   details {
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-frame);
     padding: 16px 18px;
-    background: white;
   }
 
   summary {
@@ -199,16 +203,14 @@
   .toggle-card {
     max-width: 620px;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-frame);
     padding: 24px;
-    background: white;
   }
 
   .toggle-card label {
     display: inline-grid;
     min-height: 40px;
     place-items: center;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     padding: 0 16px;
     color: white;
     background: #101625;
