@@ -5,21 +5,28 @@ const root = process.cwd()
 const distOnly = process.argv.includes('--dist')
 const targets = distOnly ? ['dist'] : ['index.html', 'styles.css']
 const errors = []
+const forbiddenPatterns = [
+  {
+    pattern: /<script[\s>]/i,
+    message: '런타임 JavaScript <script> 태그가 포함되어 있습니다.',
+  },
+  {
+    pattern: /on(click|input|change|submit|load|error)=/i,
+    message: 'inline event handler가 포함되어 있습니다.',
+  },
+]
 
-function walk(path) {
-  const stat = statSync(path)
+function walk(filePath) {
+  const stat = statSync(filePath)
   if (stat.isDirectory()) {
-    for (const entry of readdirSync(path)) walk(join(path, entry))
+    for (const entry of readdirSync(filePath)) walk(join(filePath, entry))
     return
   }
 
-  if (!/\.(html|css)$/i.test(path)) return
-  const content = readFileSync(path, 'utf8')
-  if (/<script[\s>]/i.test(content)) {
-    errors.push(`${path}: 런타임 JavaScript <script> 태그가 포함되어 있습니다.`)
-  }
-  if (/on(click|input|change|submit|load|error)=/i.test(content)) {
-    errors.push(`${path}: inline event handler가 포함되어 있습니다.`)
+  if (!/\.(html|css)$/i.test(filePath)) return
+  const content = readFileSync(filePath, 'utf8')
+  for (const { pattern, message } of forbiddenPatterns) {
+    if (pattern.test(content)) errors.push(`${filePath}: ${message}`)
   }
 }
 
