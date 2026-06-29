@@ -66,6 +66,7 @@
   }
 
   main {
+    container-type: inline-size;
     display: grid;
     gap: 32px;
     padding: var(--space-page);
@@ -188,6 +189,21 @@
     gap: 12px;
   }
 
+  .accordion details {
+    transition:
+      border-color var(--motion-standard),
+      background var(--motion-standard),
+      box-shadow var(--motion-standard);
+  }
+
+  .accordion details[open] {
+    --panel-border: color-mix(in srgb, var(--color-teal) 44%, var(--color-border));
+    background:
+      linear-gradient(135deg, #f1fffc, #ffffff 68%),
+      var(--color-surface);
+    box-shadow: 0 18px 44px rgb(0 168 148 / 10%);
+  }
+
   details {
     padding: 16px 18px;
   }
@@ -195,6 +211,31 @@
   summary {
     cursor: pointer;
     font-weight: 800;
+    line-height: 1.35;
+  }
+
+  summary::marker {
+    color: var(--color-primary);
+  }
+
+  summary:focus-visible {
+    border-radius: 4px;
+    outline: 3px solid color-mix(in srgb, var(--color-teal) 28%, transparent);
+    outline-offset: 4px;
+  }
+
+  .accordion details[open] summary {
+    color: #007d70;
+  }
+
+  .accordion details[open] summary::marker {
+    color: var(--color-teal);
+  }
+
+  .accordion details p {
+    margin: 12px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid color-mix(in srgb, var(--panel-border, var(--color-border)) 72%, transparent);
   }
 
   .token-switcher {
